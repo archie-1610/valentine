@@ -1,2 +1,95 @@
 # valentine
 Valentine card
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine Card</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        font-family: 'Arial', sans-serif;
+    }
+
+    .card {
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        text-align: center;
+        width: 320px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+        color: #e6005c;
+        margin-bottom: 25px;
+    }
+
+    .buttons {
+        position: relative;
+        height: 120px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        position: absolute;
+    }
+
+    #yesBtn {
+        background: #ff4d6d;
+        color: white;
+        left: 40px;
+        bottom: 10px;
+    }
+
+    #noBtn {
+        background: #ccc;
+        color: #333;
+        right: 40px;
+        bottom: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h2>
+        Shambhvi Kasera Highness,<br>
+        will you be my Valentine? 💖
+    </h2>
+
+    <div class="buttons">
+        <button id="yesBtn" onclick="yesClicked()">Yes 💘</button>
+        <button id="noBtn" onmouseover="moveNo()">No 🙈</button>
+    </div>
+</div>
+
+<script>
+function moveNo() {
+    const noBtn = document.getElementById("noBtn");
+    const x = Math.random() * 200;
+    const y = Math.random() * 80;
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+}
+
+function yesClicked() {
+    document.body.innerHTML = `
+        <div style="text-align:center; font-family:Arial;">
+            <h1 style="color:#ff2f68;">Yayyy! 💖💖</h1>
+            <h2>Best Valentine ever! 🌹</h2>
+        </div>
+    `;
+}
+</script>
+
+</body>
+</html>
